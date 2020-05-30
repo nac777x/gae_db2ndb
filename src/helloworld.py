@@ -1,7 +1,8 @@
 import webapp2
 from google.appengine.ext import db
 from google.appengine.api import taskqueue
-from google.net.proto2.python import public
+
+
 
 class Employee(db.Model):
     name = db.StringProperty()
@@ -20,8 +21,6 @@ html = """<form method="post" action="/move">
 
 qobj = db.GqlQuery('SELECT * FROM Employee')
 count = qobj.count()
-
-
 
 class MainPage(webapp2.RequestHandler):
     def get(self):
